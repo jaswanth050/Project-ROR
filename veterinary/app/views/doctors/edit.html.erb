@@ -1,0 +1,7 @@
+
+<%= render partial: 'common/error' ,locals: { object: @doctor} %>
+
+
+<%= form_for @doctor,  url: doctor_path(@doctor.id) , method: :PATCH do |user| %>
+	<%= render partial: 'common/user_form', locals: { user: user} %> 	
+<% end %>

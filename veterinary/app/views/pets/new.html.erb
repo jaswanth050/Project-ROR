@@ -1,0 +1,7 @@
+
+<%= render partial: 'common/error' ,locals: { object: @pet} %>
+
+
+<%= form_for @pet,  url: pets_path do |pet| %>
+	<%= render partial: 'form', locals: { pet: pet} %> 	
+<% end %>

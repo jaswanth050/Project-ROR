@@ -1,0 +1,35 @@
+<table>
+	<tr>
+		<td>Name:</td>
+		<td><%= user.text_field :name %></td>
+	</tr>	
+	 <%= user.fields_for(:address)  do |user_address| %>
+  	<tr>
+  		<td>Address:</td>
+  		<td><%= user_address.text_field :address %></td>
+  	</tr>	
+  	<tr>
+  		<td>City:</td>
+  		<td><%= user_address.text_field :city %></td>
+  	</tr>	
+  	<tr>
+  		<td>State:</td>
+  		<td><%= user_address.text_field :state %></td>
+  	</tr>	
+  	<tr>
+  		<td>Zip</td>
+  		<td><%= user_address.text_field :zip %></td>
+  	</tr>	
+  	<tr>
+  		<td>School Received Degree From:</td>
+  		<td><%= user_address.text_field :degree_from %></td>
+  	</tr>	
+  	<tr>
+  		<td>Years in Practice:</td>
+  		<td><%= user_address.text_field :experience %></td>
+  	</tr>	
+ <% end %>
+ 	<tr >
+ 		<td colspan="2" style="text-align: center;"><%= user.submit %> </td>
+  	</tr>
+</table>

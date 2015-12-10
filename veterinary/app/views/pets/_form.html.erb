@@ -1,0 +1,33 @@
+<table>
+	<tr>
+		<td>Name:</td>
+		<td><%= pet.text_field :name %></td>
+	</tr>	
+ 	<tr>
+		<td>Type of Pet:</td>
+ 		<td><%= pet.select :type_of_pet, Pet::PET_TYPES %></td>
+	</tr>	
+	<tr>
+		<td>Breed:</td>
+		<td><%= pet.text_field :breed %></td>
+	</tr>	
+	<tr>
+		<td>Age:</td>
+		<td><%= pet.text_field :age %></td>
+	</tr>	
+	<tr>
+		<td>Weight:</td>
+		<td><%= pet.text_field :weight %></td>
+	</tr>	
+	<tr>
+		<td>Date of Last Visit:</td>
+		<td><%= pet.date_select :last_visit, default: Date.today  %></td>
+	</tr>	
+	<tr>
+		<td>Customer Name:</td>
+		<td><%= pet.select :customer_id, current_user.customers.collect{|cust| [cust.name, cust.id]} %></td>
+	</tr>	
+ 	<tr >
+ 		<td colspan="2" style="text-align: center;"><%= pet.submit %> </td>
+  	</tr>
+</table>

@@ -1,0 +1,12 @@
+<table>
+	<tr>
+		<th>Date of Next Appointment</th>
+		<th>Reason for Visit</th>
+	</tr>	
+	<% current_user.next_appointments.each do |detail| %>
+		<tr>
+		<td><%= detail.visit_date.strftime("%D %H:%M:%S") %></td>
+		<td><%= detail.reason %></td>
+	</tr>		
+	<% end %>
+</table>	

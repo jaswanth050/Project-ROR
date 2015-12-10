@@ -1,0 +1,7 @@
+
+<%= render partial: 'common/error' ,locals: { object: @owner} %>
+
+
+<%= form_for @owner,  url: owner_path(@owner.id) , method: :PATCH do |user| %>
+	<%= render partial: 'common/user_form', locals: { user: user} %> 	
+<% end %>

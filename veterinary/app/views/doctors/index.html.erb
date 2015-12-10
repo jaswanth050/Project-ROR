@@ -1,0 +1,27 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Degree From</th>
+    <th>Years in Practice</th>
+  </tr>
+
+  <% @doctors.each do |doctor| %>
+  	<tr>
+	    <td><%= doctor.name %> </td>
+	    <td><%= doctor.address.try(:address) %></td>
+	    <td><%= doctor.address.try(:city) %></td>
+	    <td><%= doctor.address.try(:state) %></td>
+	    <td><%= doctor.address.try(:zip) %></td>
+	    <td><%= doctor.address.try(:degree_from) %></td>
+	    <td><%= doctor.address.try(:experience) %></td>
+	    <td><%= link_to 'edit', edit_doctor_path(doctor.id) %></td>
+  	</tr>
+  <% end %>
+
+  <%= link_to "Add", new_doctor_path()%>
+</table>

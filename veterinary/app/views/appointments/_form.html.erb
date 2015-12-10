@@ -1,0 +1,33 @@
+<table>
+	<tr>
+		<td>Pet:</td>
+		<td><%= appointment.text_field :pet %></td>
+	</tr>	
+ 	<tr>
+		<td>Customer Name:</td>
+		<% if @appointment.new_record? %>
+			<td><%= appointment.text_field :customer_name %></td>
+		<% else %>
+			<td><%= @appointment.customer_name %></td>
+		<% end %>
+	</tr>	
+	<tr>
+		<td>Date of visit:</td>
+		<td><%= appointment.date_select :visit_date, default: Date.today %></td>
+	</tr>
+	<tr>
+		<td>Doctor:</td>
+		<td><%= appointment.select :doctor_id, Doctor.all.collect{|doc| [doc.name, doc.id]}  %></td>
+	</tr>		
+	<tr>
+		<td>Reminder:</td>
+		<td><%= appointment.check_box :send_reminder %></td>
+	</tr>	
+	<tr>
+		<td>Reason:</td>
+		<td><%= appointment.text_area :reason %></td>
+	</tr>	
+	<tr >
+ 		<td colspan="2" style="text-align: center;"><%= appointment.submit %> </td>
+  	</tr>
+</table>

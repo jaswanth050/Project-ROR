@@ -1,0 +1,11 @@
+<div class="example_content" id="example_2">
+  <div id="top_navigation">
+    <%= render_navigation(:level => 1) %>
+  </div>
+  <div class="clear_float"></div>
+  <div class="content">
+    <div class="breadcrumbs">
+      <%= render_navigation(:renderer => :breadcrumbs, :join_with => ' &raquo; ', :prefix => 'breadcrumbs: ') %>
+    </div>
+  </div>
+</div>

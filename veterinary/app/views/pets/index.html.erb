@@ -1,0 +1,27 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type of Pet</th>
+    <th>Breed</th>
+    <th>Age</th>
+    <th>Weight</th>
+    <th>Date of Last Visit</th>
+    <th>Customer Name</th>
+  </tr>
+
+  <% @pets.each do |pet| %>
+  	<tr>
+	    <td><%= pet.name %> </td>
+	    <td><%= pet.type_of_pet %></td>
+	    <td><%= pet.breed %></td>
+	    <td><%= pet.age %></td>
+	    <td><%= pet.weight %></td>
+	    <td><%= pet.last_visit.strftime("%D %H:%M:%S") %></td>
+	    <td><%= pet.customer_name %></td>
+	    <td><%= link_to 'edit', edit_pet_path(pet.id) %></td>
+  	</tr>
+  <% end %>
+
+  <%= link_to "Add", new_pet_path()%>
+</table>

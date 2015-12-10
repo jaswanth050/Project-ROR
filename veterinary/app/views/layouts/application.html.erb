@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Veterinary</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="header">
+	<h1>Veterinary</h1>
+	<% if current_user %>
+  		Signed in as <%= user_display_name %> | <%= link_to "Logout", sessions_destroy_path, {method: :delete} %>  
+	<% end %>
+
+</div>
+
+<% if current_user %>
+	<div id="nav">
+		<%= render_navigation %>
+	</div>
+<% end %>
+
+<div id="section">
+	<%= yield %>	
+</div>
+
+
+
+
+
+
+</body>
+</html>
